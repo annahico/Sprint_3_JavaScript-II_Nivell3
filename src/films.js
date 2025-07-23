@@ -31,8 +31,17 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear() {
-
-}
+  return array 
+      .slice()
+      .sort((filmA, filmB) => {
+        if (filmA.year === filmB.year) {
+          return filmA.title.localeCompare(filmB.title); // si dues pelis són del mateix any, sordena alfabéticament
+        } else {
+          return filmA.year - filmB-year; // si no, ordena per any
+        }
+        })
+      .map(film => film.title); 
+  }
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory() {
