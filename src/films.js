@@ -1,14 +1,12 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let result = array.map(film => film.director);
-  console.log("EXERCICE 1 ->", result);
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
   let result = array.filter (film => film.director === director);
-  console.log("EXERCICE 2 ->", result);
   return result;
  }
 
@@ -19,13 +17,16 @@ function moviesAverageOfDirector(array, director) {
     return 0;
   let totalScore = films.reduce ((sum, film) => sum + film.score , 0);
   let average = totalScore / films.length;
-  console.log("EXERCICE 3 ->", average);
   return parseFloat(average.toFixed(2)); // redondeig del número en 2 decimals
 }
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  
+  return array
+  .slice() //es crea una copia per no modificar l'original
+  .sort((filmA, filmB) => filmA.title.localeCompare(filmB.title)) // ordenemt alfabèticament le spelis
+  .slice(0, 20)
+  .map(film => film.title); // mostra només els títols de les 20 priemres pelis
 }
 
 // Exercise 5: Order by year, ascending
