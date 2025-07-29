@@ -1,22 +1,22 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
-  let result = array.map(film => film.director);
+  let result = array.map(movie => movie.director);
   return result;
 }
 
-// Exercise 2: Get the films of a certain director
+// Exercise 2: Get the movies of a certain director
 function getMoviesFromDirector(array, director) {
-  let result = array.filter (film => film.director === director);
+  let result = array.filter ((movie) => movie.director === director);
   return result;
  }
 
-// Exercise 3: Calculate the average of the films of a given director.
+// Exercise 3: Calculate the average of the movies of a given director.
 function moviesAverageOfDirector(array, director) {
-  let films = getMoviesFromDirector(array, director);
-  if (films.length === 0) 
+  let movies = getMoviesFromDirector(array, director);
+  if (movies.length === 0) 
     return 0;
-  let totalScore = films.reduce ((sum, film) => sum + film.score , 0);
-  let average = totalScore / films.length;
+  let totalScore = movies.reduce ((sum, movie) => sum + movie.score , 0);
+  let average = totalScore / movies.length;
   return parseFloat(average.toFixed(2)); // redondeig del número en 2 decimals
 }
 
@@ -24,37 +24,37 @@ function moviesAverageOfDirector(array, director) {
 function orderAlphabetically(array) {
   return array
   .slice() //es crea una copia per no modificar l'original
-  .sort((filmA, filmB) => filmA.title.localeCompare(filmB.title)) // ordenemt alfabèticament le spelis
+  .sort((movieA, movieB) => movieA.title.localeCompare(movieB.title)) // ordenemt alfabèticament le spelis
   .slice(0, 20)
-  .map(film => film.title); // mostra només els títols de les 20 priemres pelis
+  .map(movie => movie.title); // mostra només els títols de les 20 priemres pelis
 }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
-  return array 
-      .slice()
-      .sort((filmA, filmB) => {
-        if (filmA.year === filmB.year) {
-          return filmA.title.localeCompare(filmB.title); // si dues pelis són del mateix any, sordena alfabéticament
-        } else {
-          return filmA.year - filmB-year; // si no, ordena per any
-        }
-        })
-      .map(film => film.title); 
-  }
+function orderByYear(array) {
+  const sortedByYear = array.slice().sort((a, b) => a.year - b.year || 
+  a.title.localeCompare(b.title)); // s'ordena primer per any, si són iguals, s'ordena alfabèticament per títol
+  return sortedByYear; // retorna l'array ordenat
+}
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
-
+function moviesAverageByCategory(array, genre) {
+  const moviesByGenre =array.filter((movie) => movie.genre.includes(genre));
+  const totalScore = moviesByGenre.reduce((sum, movie) => {
+    return sum + movie.score;
+  }, 0);
+  let averageScore = totalScore / moviesByGenre.length;
+  const result = +averageScore.toFixed(2);
+  return result
 }
+
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {
 
 }
 
-// Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
+// Exercise 8: Get the best movie of a year
+function bestmovieOfYear() {
   
 }
 
@@ -71,6 +71,6 @@ if (typeof module !== 'undefined') {
     orderByYear,
     moviesAverageByCategory,
     hoursToMinutes,
-    bestFilmOfYear,
+    bestmovieOfYear,
   };
 }
