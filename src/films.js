@@ -72,11 +72,11 @@ function hoursToMinutes(array) {
 }
 
 // Exercise 8: Get the best movie of a year
-function bestmovieOfYear() {
-  
+function bestFilmOfYear(array, year) {
+  const moviesByYear = array.filter((movie) => movie.year === year);
+  const sortedByScore = moviesByYear.sort((a, b) => b.score - a.score);
+  return [sortedByScore[0]]; // Retorna un array amb la millor pel·lícula de l'any
 }
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
@@ -89,6 +89,6 @@ if (typeof module !== 'undefined') {
     orderByYear,
     moviesAverageByCategory,
     hoursToMinutes,
-    bestmovieOfYear,
+    bestFilmOfYear, // hi ha l'error de movies quan es FILM
   };
 }
