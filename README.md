@@ -23,7 +23,7 @@ $ git remote rm origin
 
 3. Link your repo to the repository you have to create in your github account
 ```bash
-$ git remote add origin https://github.com/annahico/Sprint_3_JavaScript-II_Nivell3.git!>
+$ git remote add origin https://github.com/annahico/Sprint_3_JavaScript-II_Nivell3.git
 ```
 
 <br>
