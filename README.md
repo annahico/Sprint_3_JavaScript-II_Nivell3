@@ -11,7 +11,7 @@ You will be in charge of setting up the core of the application: all the logic o
 ## Requirements
 
 
-1. Clone this repo
+<!-- 1. Clone this repo
 ```bash
 $ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
 ```
@@ -19,9 +19,9 @@ $ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-mov
 2. Unlink your repo from the itacademy repository
 ```bash
 $ git remote rm origin
-```
+``` -->
 
-3. Link your repo to the repository you have to create in your github account
+1. Clone this repo
 ```bash
 $ git remote add origin https://github.com/annahico/Sprint_3_JavaScript-II_Nivell3.git
 ```
